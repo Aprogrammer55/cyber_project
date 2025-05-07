@@ -325,6 +325,13 @@ select {
     background: hsl(var(--background-secondary-light));
     box-shadow: 0 17px 30px -10px hsla(var(--black), .25);
 }
+
+.selected {
+    color: hsl(var(--white));
+    background: hsl(var(--background-secondary-light));
+    box-shadow: 0 17px 30px -10px hsla(var(--black), .25);
+}
+
 .navbar-item-inner-icon-wrapper {
     width: calc(5rem - 1em - 8px);
     position: relative;

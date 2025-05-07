@@ -49,6 +49,10 @@ html, body {
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
     box-sizing: border-box;
+    background-image: url("main_background.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #cccccc;
 }
 
 /* ============
@@ -451,9 +455,10 @@ select {
 /* main page */
 
 .cards {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
 }
+
 
 .card {
   width: var(--card-width);
@@ -545,4 +550,21 @@ select {
 .card:hover .character {
   opacity: 1;
   transform: translate3d(0%, -30%, 100px);
+}
+
+.locked {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 2;
+}
+
+.locked .lock {
+    position: absolute;
+    bottom: 10%;
+    left: 30%;
+    font-size: 20px;
 }

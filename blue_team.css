@@ -1,0 +1,118 @@
+
+  
+  /* Flexbox helpers */
+  .flexbox, .flexbox-left, .flexbox-col {
+    display: flex;
+  }
+  .flexbox-left {
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .flexbox-col {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0a122a;
+    color: #e0ecff;
+    padding: 2rem;
+  }
+  
+  .logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .logo img {
+    width: 150px;
+    height: auto;
+  }
+  
+  .shadow-box {
+    background: #0d1a38;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+    text-align: center;
+  }
+  
+  .shadow-box h1 {
+    color: #3399ff;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+  }
+  
+  .pathways {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .card {
+    background-color: #0d1a38;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+    transition: transform 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card h2 {
+    color: #66ccff;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  .card p {
+    color: #cfdcff;
+    line-height: 1.5;
+  }
+  /* Adjust layout to accommodate the sidebar */
+.main-content {
+    margin-left: 6em;
+    padding: 2rem;
+  }
+  
+  /* Make sidebar colors match the blue theme */
+  :root {
+    --background-secondary: 225, 25%, 10%;
+    --background-secondary-dark: 225, 20%, 7%;
+    --background-secondary-light: 225, 30%, 18%;
+    --primary: 210, 100%, 65%;
+    --white: 0, 0%, 100%;
+    --quite-gray: 210, 10%, 60%;
+    --black: 0, 0%, 0%;
+    --transition-main: 0.4, 0, 0.2;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80px; /* or whatever your desired width is */
+    height: 100vh;
+    background-color: #0f111a;
+    padding: 0;
+    margin: 0;
+  }
+
+ .nav  .navbar-logo a {
+    position: relative;
+    left: 20px;
+  }

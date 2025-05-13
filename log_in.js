@@ -1,63 +1,63 @@
-// Simulated file system using localStorage
-const FileSystem = {
-    write: (filename, content) => {
-        localStorage.setItem(filename, JSON.stringify(content));
-    },
-    read: (filename) => {
-        const data = localStorage.getItem(filename);
-        return data ? JSON.parse(data) : null;
-    },
-    exists: (filename) => {
-        return localStorage.getItem(filename) !== null;
-    },
-};
+const signUpButton = document.getElementById("signUp");
+const signInButton = document.getElementById("signIn");
+const container = document.getElementById("container");
 
-// Sample user data structure
-const USERS_FILE = "users";
+// Toggle UI panels
+signUpButton.addEventListener("click", () =>
+    container.classList.add("right-panel-active")
+);
+signInButton.addEventListener("click", () =>
+    container.classList.remove("right-panel-active")
+);
 
-// Initialize dummy users if not present
-if (!FileSystem.exists(USERS_FILE)) {
-    FileSystem.write(USERS_FILE, [
-        { username: "test@example.com", password: "1234" },
-        { username: "admin", password: "admin" },
-    ]);
+// Get saved users or initialize
+function getUsers() {
+    const users = localStorage.getItem("users");
+    return users ? JSON.parse(users) : [];
 }
 
-// Login logic
-document
-    .querySelector(".login__submit")
-    .addEventListener("click", function (e) {
-        e.preventDefault();
+function saveUser(username, password) {
+    const users = getUsers();
+    users.push({ username, password });
+    localStorage.setItem("users", JSON.stringify(users));
+}
 
-        const usernameInput = document.querySelector(
-            '.login__input[type="text"]'
-        );
-        const passwordInput = document.querySelector(
-            '.login__input[type="password"]'
-        );
-        const username = usernameInput.value.trim();
-        const password = passwordInput.value;
+function userExists(username) {
+    return getUsers().some((user) => user.username === username);
+}
 
-        if (!username || !password) {
-            alert("Please enter both username and password.");
-            return;
-        }
+function validateUser(username, password) {
+    return getUsers().some(
+        (user) => user.username === username && user.password === password
+    );
+}
 
-        const users = FileSystem.read(USERS_FILE);
-        const user = users.find(
-            (u) => u.username === username && u.password === password
-        );
+// Handle Sign Up
+document.getElementById("signUpForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const username = e.target.elements[0].value;
+    const password = e.target.elements[1].value;
 
-        if (user) {
-            window.location.href = "index.html";
-        } else {
-            alert("Invalid username or password.");
-        }
-    });
-let users = FileSystem.read(USERS_FILE) || [];
+    if (userExists(username)) {
+        alert("Username already exists!");
+    } else {
+        saveUser(username, password);
+        alert("Account created successfully!");
+        e.target.reset();
+        container.classList.remove("right-panel-active");
+    }
+});
 
-// Add new user
-users.push({ username: "Adham", password: "12345" });
+// Handle Sign In
+document.getElementById("signInForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const username = e.target.elements[0].value;
+    const password = e.target.elements[1].value;
 
-// Write updated users back to "file"
-FileSystem.write(USERS_FILE, users);
+    if (validateUser(username, password)) {
+        window.location.href = "index.html";
+        // redirect or continue here
+    } else {
+        alert("Invalid username or password.");
+    }
+});

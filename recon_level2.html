@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 2: Footprinting Basics</title>
+    <link rel="stylesheet" href="recon_level2.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Level 2: Footprinting Basics</h1>
+        <p>
+            Footprinting is one of the initial phases of ethical hacking where the hacker gathers detailed information
+            about a target system, organization, or network. The goal of footprinting is to gain as much information as
+            possible to understand how the target operates, identify weaknesses, and begin the process of penetration
+            testing.
+        </p>
+
+        <h2>What is Footprinting?</h2>
+        <p>
+            Footprinting is the act of collecting information about a target system, such as domain names, IP addresses,
+            organizational structure, employee details, etc. In this phase, hackers do not directly interact with the
+            target system but gather data through external resources and services.
+        </p>
+
+        <h2>Why is Footprinting Important?</h2>
+        <p>
+            The primary goal of footprinting is to gather as much information as possible about the target without
+            alerting the target. This information helps ethical hackers or attackers to plan further actions such as
+            identifying potential vulnerabilities, attack vectors, and weaknesses.
+        </p>
+
+        <h2>Types of Footprinting</h2>
+        <ul>
+            <li><strong>Active Footprinting:</strong> Involves interacting directly with the target to obtain
+                information, such as querying DNS servers, scanning the network, or using social engineering.</li>
+            <li><strong>Passive Footprinting:</strong> Involves collecting information without interacting directly with
+                the target system. Examples include browsing publicly available data such as WHOIS databases, social
+                media, company websites, and other public data.</li>
+        </ul>
+
+        <h2>Common Footprinting Techniques</h2>
+        <p>
+            Here are some common techniques used for footprinting:
+        </p>
+        <ul>
+            <li><strong>DNS Interrogation:</strong> A Domain Name System (DNS) query reveals domain information,
+                including subdomains and hostnames.</li>
+            <li><strong>WHOIS Queries:</strong> WHOIS queries provide information about domain ownership, registration
+                details, and contact information.</li>
+            <li><strong>Network Scanning:</strong> Identifying open ports, services, and devices in the target network
+                to understand its structure and security posture.</li>
+            <li><strong>Social Media Analysis:</strong> Many organizations unknowingly disclose valuable information
+                about their infrastructure, employees, and operations via social media platforms.</li>
+        </ul>
+
+        <h2>Reconnaissance Tools for Footprinting</h2>
+        <p>
+            Some of the tools commonly used during the footprinting phase include:
+        </p>
+        <ul>
+            <li><strong>WHOIS Lookup Tools:</strong> Examples include WHOIS.net, DomainTools.</li>
+            <li><strong>DNS Lookup Tools:</strong> Tools such as nslookup and Dig help query DNS servers to gather
+                domain information.</li>
+            <li><strong>Traceroute:</strong> A tool to map the network path to a target, showing the network route
+                packets take to reach the destination.</li>
+            <li><strong>Google Dorks:</strong> Special search queries that help uncover sensitive information exposed on
+                the web.</li>
+        </ul>
+
+        <div class="quiz-box">
+            <h2>🕵️‍♂️ Test Your Knowledge!</h2>
+            <p>Which of the following is an example of <strong>passive footprinting</strong>?</p>
+            <form id="quiz-form">
+                <label><input type="radio" name="q1" value="a"> Scanning open ports using Nmap</label><br>
+                <label><input type="radio" name="q1" value="b"> Searching social media for employee details</label><br>
+                <label><input type="radio" name="q1" value="c"> Running a ping sweep on the network</label><br><br>
+
+                <p>What does a WHOIS query provide information about?</p>
+                <label><input type="radio" name="q2" value="a"> The physical location of a server</label><br>
+                <label><input type="radio" name="q2" value="b"> Domain ownership and registration details</label><br>
+                <label><input type="radio" name="q2" value="c"> The IP address of the target</label><br><br>
+
+                <p>Which tool would be used to map the network path to a target?</p>
+                <label><input type="radio" name="q3" value="a"> nslookup</label><br>
+                <label><input type="radio" name="q3" value="b"> traceroute</label><br>
+                <label><input type="radio" name="q3" value="c"> WHOIS</label><br><br>
+
+                <p>What is a key difference between active and passive footprinting?</p>
+                <label><input type="radio" name="q4" value="a"> Passive footprinting is more intrusive</label><br>
+                <label><input type="radio" name="q4" value="b"> Active footprinting is the process of gathering
+                    information without directly interacting with the target</label><br>
+                <label><input type="radio" name="q4" value="c"> Passive footprinting involves direct interaction with
+                    the target system</label><br><br>
+
+                <button type="submit">Submit</button>
+                <p id="result"></p>
+            </form>
+        </div>
+    </div>
+    <script src="recon_level2.js"></script>
+</body>
+
+</html>

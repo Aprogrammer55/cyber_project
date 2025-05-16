@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Level 2: Network Layers & Protocols</title>
+    <link rel="stylesheet" href="net_level2.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Level 2: Network Layers & Protocols</h1>
+        <p>
+            To truly understand how computers talk to each other, we need to study the **layers of communication** and
+            the **rules (protocols)** they follow. These layers help us troubleshoot issues, secure communications, and
+            build more efficient networks.
+        </p>
+
+        <h2>📘 OSI Model - 7 Layers</h2>
+        <p>The OSI (Open Systems Interconnection) model is a conceptual framework used to understand and standardize how
+            data is sent and received over a network. It breaks down communication into 7 layers, each with its own
+            responsibilities. Here's a closer look:</p>
+
+        <ol>
+            <li>
+                <strong> Physical Layer</strong><br />
+                This is the lowest layer and deals with the actual physical hardware — wires, cables, switches, and the
+                transmission of bits as electrical or optical signals.<br />
+                <em>Example:</em> Ethernet cables, Wi-Fi signals.
+            </li><br />
+
+            <li>
+                <strong> Data Link Layer</strong><br />
+                This layer is responsible for reliable transmission over the physical link. It organizes bits into
+                frames and handles error detection and correction.<br />
+                <em>Example:</em> MAC addresses, Ethernet protocol.<br />
+                <em>Analogy:</em> Like traffic rules that control cars on local roads.
+            </li><br />
+
+            <li>
+                <strong> Network Layer</strong><br />
+                Determines the best path to send data from source to destination across networks. Handles addressing and
+                routing.<br />
+                <em>Example:</em> IP (Internet Protocol), Routers.<br />
+                <em>Analogy:</em> Like a GPS finding the best route for delivery.
+            </li><br />
+
+            <li>
+                <strong> Transport Layer</strong><br />
+                Ensures complete data transfer with reliability, flow control, and error recovery.<br />
+                <em>Example:</em> TCP (guarantees delivery), UDP (faster, less reliable).<br />
+                <em>Analogy:</em> Like choosing between tracked postal delivery (TCP) and regular mail (UDP).
+            </li><br />
+
+            <li>
+                <strong> Session Layer</strong><br />
+                Manages sessions between two applications. It opens, maintains, and closes connections.<br />
+                <em>Example:</em> Remote procedure calls (RPC), NetBIOS.
+            </li><br />
+
+            <li>
+                <strong> Presentation Layer</strong><br />
+                This layer translates data into a format that the application layer can understand. Handles encryption,
+                compression, and formatting.<br />
+                <em>Example:</em> SSL/TLS (encryption), JPEG, ASCII.
+            </li><br />
+
+            <li>
+                <strong> Application Layer</strong><br />
+                The topmost layer directly used by users via applications like web browsers or email clients.<br />
+                <em>Example:</em> HTTP, FTP, DNS, SMTP.
+            </li>
+        </ol>
+
+        <h2>📡 Common Network Protocols (With Use Cases)</h2>
+        <p>Protocols are the rules that define how data is transmitted between devices. Here are some common ones
+            categorized by layer:</p>
+
+        <ul>
+            <li><strong>HTTP/HTTPS (Application Layer):</strong> Used for viewing web pages. HTTPS adds encryption for
+                security.</li>
+            <li><strong>FTP (Application Layer):</strong> Transfers files between computers.</li>
+            <li><strong>DNS (Application Layer):</strong> Translates domain names (like google.com) into IP addresses.
+            </li>
+            <li><strong>SMTP/POP3/IMAP (Application Layer):</strong> Used for sending and receiving emails.</li>
+            <li><strong>TCP (Transport Layer):</strong> Ensures reliable, ordered delivery of data (e.g., downloading a
+                file).</li>
+            <li><strong>UDP (Transport Layer):</strong> Sends data fast but without guarantees (used in video calls or
+                gaming).</li>
+            <li><strong>IP (Network Layer):</strong> Addresses and routes data packets across the internet.</li>
+            <li><strong>ICMP (Network Layer):</strong> Used for diagnostics (like the ping command).</li>
+            <li><strong>Ethernet/Wi-Fi (Data Link/Physical Layers):</strong> Responsible for transmitting data over
+                cables or wirelessly.</li>
+        </ul>
+
+        <div class="quiz-box">
+            <h2>🧠 Test Your Knowledge!</h2>
+            <form id="quiz-form">
+                <p>1. What layer is responsible for routing data between devices?</p>
+                <label><input type="radio" name="q1" value="a"> Data Link Layer</label><br />
+                <label><input type="radio" name="q1" value="b"> Network Layer</label><br />
+                <label><input type="radio" name="q1" value="c"> Physical Layer</label><br /><br />
+
+                <p>2. Which protocol guarantees delivery of data packets?</p>
+                <label><input type="radio" name="q2" value="a"> UDP</label><br />
+                <label><input type="radio" name="q2" value="b"> TCP</label><br />
+                <label><input type="radio" name="q2" value="c"> FTP</label><br /><br />
+
+                <p>3. What is the main role of the Presentation Layer?</p>
+                <label><input type="radio" name="q3" value="a"> Encrypt, compress, and format data</label><br />
+                <label><input type="radio" name="q3" value="b"> Route data</label><br />
+                <label><input type="radio" name="q3" value="c"> Display graphics</label><br /><br />
+
+                <p>4. Which layer handles MAC addresses?</p>
+                <label><input type="radio" name="q4" value="a"> Transport Layer</label><br />
+                <label><input type="radio" name="q4" value="b"> Data Link Layer</label><br />
+                <label><input type="radio" name="q4" value="c"> Application Layer</label><br /><br />
+
+                <p>5. What protocol is used to resolve domain names?</p>
+                <label><input type="radio" name="q5" value="a"> HTTP</label><br />
+                <label><input type="radio" name="q5" value="b"> TCP</label><br />
+                <label><input type="radio" name="q5" value="c"> DNS</label><br /><br />
+
+                <p>6. Which layer opens and closes sessions between systems?</p>
+                <label><input type="radio" name="q6" value="a"> Session Layer</label><br />
+                <label><input type="radio" name="q6" value="b"> Physical Layer</label><br />
+                <label><input type="radio" name="q6" value="c"> Network Layer</label><br /><br />
+
+                <button type="submit">Submit</button>
+                <p id="result"></p>
+            </form>
+        </div>
+
+        <div class="next-level">
+            <a href="net_level3.html" class="next-button">Next Level ➡️</a>
+        </div>
+    </div>
+
+    <script src="net_level2.js"></script>
+</body>
+
+</html>

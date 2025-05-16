@@ -6,35 +6,46 @@ body {
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 900px;
+    margin: auto;
     background-color: #161b22;
     padding: 2rem;
     border-radius: 1rem;
-    box-shadow: 0 0 15px rgba(0, 0, 255, 0.4);
+    box-shadow: 0 0 20px rgba(0, 0, 255, 0.4);
 }
 
 h1 {
-    color: #007acc;
-    margin-bottom: 1rem;
+    color: #58a6ff;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    color: #55acee;
+    margin-top: 2rem;
+}
+
+ol, ul {
+    margin-left: 2rem;
+    line-height: 1.6;
 }
 
 .quiz-box {
-    margin-top: 2rem;
+    margin-top: 3rem;
     padding: 1.5rem;
     background-color: #1c2128;
     border-radius: 1rem;
 }
 
 .quiz-box h2 {
-    color: #55acee;
+    color: #79c0ff;
+    margin-bottom: 1rem;
 }
 
 button {
     background-color: #007acc;
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1.2rem;
     font-weight: bold;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -46,18 +57,18 @@ button:hover {
 }
 
 #result {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     font-weight: bold;
+    font-size: 1.1rem;
 }
 
-
 .next-level {
-    margin-top: 30px;
+    margin-top: 40px;
     text-align: center;
 }
 
 .next-button {
-    background-color: #005f99; /* dark red */
+    background-color: #005f99;
     color: white;
     padding: 12px 24px;
     font-size: 16px;
@@ -67,5 +78,5 @@ button:hover {
 }
 
 .next-button:hover {
-    background-color: #55acee; /* firebrick red */
+    background-color: #55acee;
 }
